@@ -17,7 +17,7 @@ app.get('/data', (req, res) => {
 });
 
 app.post('/money', (req, res) => {
-   const result = pool.query(`INSERT into dox (money) VALUES(${req.body.amount})`, function(err, rows, fields){
+   const result = pool.query(`INSERT into dox (money) VALUES(${req.body})`, function(err, rows, fields){
       if(err) throw err;
       res.send(rows);
    });
